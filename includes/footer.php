@@ -2,18 +2,11 @@
 /**
  * footer.php — Shared Page Footer Partial
  * ==========================================
- * Include this at the BOTTOM of every page, just before </body>:
+ * Include at the BOTTOM of every page, just before </body>:
  *   require_once __DIR__ . '/includes/footer.php';  (from root pages)
  *   require_once __DIR__ . '/../includes/footer.php'; (from admin/ pages)
- *
- * It outputs:
- *   - The site footer section
- *   - Shared JavaScript includes
- *   - Page-specific JS slot
- *   - </body> and </html> closing tags
  */
 
-// Load config if not already loaded
 if (!defined('APP_NAME')) {
     require_once __DIR__ . '/config.php';
 }
@@ -21,20 +14,19 @@ if (!defined('APP_NAME')) {
 $current_year = date('Y');
 ?>
 
-<!-- ─── Site Footer ────────────────────────────────────────────────────── -->
-<footer class="footer" role="contentinfo">
-    <div class="container">
-        <p>
-            &copy; <?= $current_year ?> <strong><?= APP_NAME ?></strong> — <?= APP_TAGLINE ?>
-        </p>
-        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--clr-text-faint);">
-            Built with ❤️ for food safety and customer care.
-        </p>
+<!-- ─── Site Footer ───────────────────────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container site-footer__inner">
+        <span class="site-footer__copy">© <?= $current_year ?> FoodCare. All rights reserved.</span>
+        <div class="site-footer__links">
+            <a href="#" id="footer-privacy">Privacy Policy</a>
+            <a href="#" id="footer-terms">Terms of Service</a>
+        </div>
     </div>
 </footer>
-<!-- ─── End Footer ────────────────────────────────────────────────────── -->
+<!-- ─── End Footer ───────────────────────────────────────────────────── -->
 
-<!-- ─── Shared JavaScript ─────────────────────────────────────────────── -->
+<!-- ─── Shared JavaScript ────────────────────────────────────────────── -->
 <script src="<?= BASE_PATH ?>/js/main.js"></script>
 
 <!-- Page-specific JS slot (define $extra_js before including footer.php) -->

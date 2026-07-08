@@ -89,11 +89,21 @@ try {
             name          VARCHAR(100) NOT NULL,
             email         VARCHAR(191) NOT NULL UNIQUE,
             password_hash VARCHAR(255) NOT NULL,
+            phone         VARCHAR(20) DEFAULT NULL,
+            organization  VARCHAR(150) DEFAULT NULL,
             role          ENUM('customer', 'admin') NOT NULL DEFAULT 'customer',
             created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     ");
-    result('✅', 'users', 'Table created (or already exists).');
+    // Ensure existing databases get altered to include new columns
+    try {
+        $pdo->exec("ALTER TABLE users ADD COLUMN phone VARCHAR(20) DEFAULT NULL");
+    } catch (PDOException $e) {}
+    try {
+        $pdo->exec("ALTER TABLE users ADD COLUMN organization VARCHAR(150) DEFAULT NULL");
+    } catch (PDOException $e) {}
+
+    result('✅', 'users', 'Table created and altered (or already exists).');
 } catch (PDOException $e) {
     result('❌', 'users', $e->getMessage());
 }
@@ -119,9 +129,15 @@ try {
             description TEXT,
             price       DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
             image       VARCHAR(255),
-            created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
         )
     ");
+    // Ensure existing databases get altered to include new column
+    try {
+        $pdo->exec("ALTER TABLE products ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP");
+    } catch (PDOException $e) {}
+
     result('✅', 'products', 'Table created (or already exists).');
 } catch (PDOException $e) {
     result('❌', 'products', $e->getMessage());

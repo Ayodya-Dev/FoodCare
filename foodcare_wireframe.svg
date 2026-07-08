@@ -1,0 +1,340 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" style="background:#F3F4F6; font-family:'Inter', sans-serif;">
+  <!-- DEFINITIONS & STYLES -->
+  <defs>
+    <style>
+      .title { font-size: 24px; font-weight: bold; fill: #111827; }
+      .subtitle { font-size: 14px; fill: #6B7280; }
+      .header-text { font-size: 14px; font-weight: 600; fill: #374151; }
+      .cell-text { font-size: 13px; fill: #4B5563; }
+      .card-val { font-size: 28px; font-weight: 700; fill: #111827; }
+      .card-lbl { font-size: 12px; font-weight: 600; fill: #6B7280; text-transform: uppercase; }
+      .btn-txt { font-size: 13px; font-weight: 600; fill: #FFFFFF; }
+      .nav-txt { font-size: 14px; font-weight: 500; fill: #4B5563; }
+      .nav-txt-act { font-size: 14px; font-weight: 600; fill: #FF7A1A; }
+      .badge-txt { font-size: 11px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- ==================== SCREEN 1: ADMIN DASHBOARD WIREFRAME ==================== -->
+  <g transform="translate(40, 40)">
+    <!-- Browser Mockup Window -->
+    <rect width="880" height="480" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    <!-- Browser Header Bar -->
+    <rect width="880" height="40" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="2"/>
+    <!-- Close, Min, Max buttons -->
+    <circle cx="20" cy="20" r="6" fill="#EF4444"/>
+    <circle cx="36" cy="20" r="6" fill="#FBBF24"/>
+    <circle cx="52" cy="20" r="6" fill="#10B981"/>
+    <!-- URL bar mockup -->
+    <rect x="100" y="8" width="680" height="24" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="110" y="24" font-size="12" fill="#9CA3AF">localhost/FoodCare/admin/dashboard.php</text>
+
+    <!-- Sidebar Layout -->
+    <rect x="0" y="40" width="180" height="440" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <!-- Logo -->
+    <text x="20" y="75" font-size="18" font-weight="800" fill="#FF7A1A">🍔 FoodCare</text>
+    
+    <!-- Sidebar Links -->
+    <g transform="translate(0, 100)">
+      <!-- Dashboard Link (Active) -->
+      <rect x="10" y="0" width="160" height="36" rx="6" fill="#FFF0E6"/>
+      <text x="35" y="22" class="nav-txt-act">Dashboard</text>
+      <!-- Complaints Link -->
+      <text x="35" y="62" class="nav-txt">Complaints</text>
+      <!-- Products Link -->
+      <text x="35" y="102" class="nav-txt">Products</text>
+      <!-- Users Link -->
+      <text x="35" y="142" class="nav-txt">Users</text>
+      <!-- Reports Link -->
+      <text x="35" y="182" class="nav-txt">Reports</text>
+    </g>
+
+    <!-- Main Admin Workspace content -->
+    <g transform="translate(200, 40)">
+      <!-- Header Area -->
+      <text x="0" y="40" class="title">Admin Dashboard</text>
+      <text x="0" y="60" class="subtitle">Overview and statistics summary</text>
+
+      <!-- Stat Cards Grid -->
+      <g transform="translate(0, 80)">
+        <!-- Stat Card 1 -->
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+        <text x="12" y="25" class="card-lbl">Total</text>
+        <text x="12" y="55" class="card-val">3</text>
+        
+        <!-- Stat Card 2 -->
+        <rect x="135" y="0" width="120" height="70" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+        <text x="147" y="25" class="card-lbl" fill="#EA580C">New</text>
+        <text x="147" y="55" class="card-val">1</text>
+        
+        <!-- Stat Card 3 -->
+        <rect x="270" y="0" width="120" height="70" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+        <text x="282" y="25" class="card-lbl" fill="#D97706">Progress</text>
+        <text x="282" y="55" class="card-val">1</text>
+        
+        <!-- Stat Card 4 -->
+        <rect x="405" y="0" width="120" height="70" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+        <text x="417" y="25" class="card-lbl" fill="#059669">Resolved</text>
+        <text x="417" y="55" class="card-val">0</text>
+
+        <!-- Stat Card 5 -->
+        <rect x="540" y="0" width="120" height="70" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+        <text x="552" y="25" class="card-lbl" fill="#374151">Closed</text>
+        <text x="552" y="55" class="card-val">1</text>
+      </g>
+
+      <!-- Table Section -->
+      <g transform="translate(0, 180)">
+        <text x="0" y="0" font-size="16" font-weight="700" fill="#111827">Recent Complaints</text>
+        
+        <rect x="0" y="15" width="660" height="190" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+        <!-- Table Headers -->
+        <rect x="0" y="15" width="660" height="30" fill="#F9FAFB"/>
+        <text x="15" y="34" class="header-text">Customer</text>
+        <text x="150" y="34" class="header-text">Product</text>
+        <text x="280" y="34" class="header-text">Status</text>
+        <text x="390" y="34" class="header-text">Submitted</text>
+        <text x="490" y="34" class="header-text">Last Updated</text>
+        <text x="600" y="34" class="header-text">Action</text>
+
+        <!-- Table Row 1 -->
+        <text x="15" y="75" class="cell-text" font-weight="600">Ayodya Sasanka</text>
+        <text x="150" y="75" class="cell-text">BBQ Pulled Pork</text>
+        <rect x="280" y="62" width="80" height="18" rx="9" fill="#FFFBEB"/>
+        <text x="290" y="75" class="badge-txt" fill="#D97706">In progress</text>
+        <text x="390" y="75" class="cell-text">2026-07-08</text>
+        <text x="490" y="75" class="cell-text">2026-07-08</text>
+        <rect x="600" y="60" width="50" height="22" rx="4" fill="#F3F4F6" stroke="#D1D5DB"/>
+        <text x="608" y="75" font-size="11" font-weight="600" fill="#374151">Process</text>
+
+        <!-- Divider -->
+        <line x1="0" y1="95" x2="660" y2="95" stroke="#F3F4F6" stroke-width="1"/>
+
+        <!-- Table Row 2 -->
+        <text x="15" y="120" class="cell-text" font-weight="600">Ayodya Sasanka</text>
+        <text x="150" y="120" class="cell-text">mango</text>
+        <rect x="280" y="107" width="80" height="18" rx="9" fill="#F3F4F6"/>
+        <text x="305" y="120" class="badge-txt" fill="#4B5563">Closed</text>
+        <text x="390" y="120" class="cell-text">2026-07-08</text>
+        <text x="490" y="120" class="cell-text">2026-07-08</text>
+        <rect x="600" y="105" width="50" height="22" rx="4" fill="#F3F4F6" stroke="#D1D5DB"/>
+        <text x="608" y="120" font-size="11" font-weight="600" fill="#374151">Process</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== SCREEN 2: CUSTOMER DASHBOARD WIREFRAME ==================== -->
+  <g transform="translate(980, 40)">
+    <!-- Browser Mockup Window -->
+    <rect width="880" height="480" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    <!-- Browser Header Bar -->
+    <rect width="880" height="40" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="2"/>
+    <!-- Close, Min, Max buttons -->
+    <circle cx="20" cy="20" r="6" fill="#EF4444"/>
+    <circle cx="36" cy="20" r="6" fill="#FBBF24"/>
+    <circle cx="52" cy="20" r="6" fill="#10B981"/>
+    <!-- URL bar mockup -->
+    <rect x="100" y="8" width="680" height="24" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="110" y="24" font-size="12" fill="#9CA3AF">localhost/FoodCare/customer_dashboard.php</text>
+
+    <!-- Customer Navigation Header inside website -->
+    <rect x="0" y="40" width="880" height="60" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="30" y="78" font-size="20" font-weight="800" fill="#FF7A1A">🍔 FoodCare</text>
+    
+    <g transform="translate(520, 0)">
+      <text x="0" y="76" class="nav-txt-act">Dashboard</text>
+      <text x="100" y="76" class="nav-txt">New Complaint</text>
+      <text x="230" y="76" class="nav-txt">Track</text>
+      <!-- Round avatar logo -->
+      <circle cx="320" cy="70" r="16" fill="#FF7A1A"/>
+      <text x="315" y="75" font-size="12" font-weight="700" fill="#FFFFFF">A</text>
+    </g>
+
+    <!-- Main Customer Dashboard Content -->
+    <g transform="translate(40, 120)">
+      <!-- Welcome Header -->
+      <text x="0" y="30" class="title" font-size="20">Welcome, Ayodya Sasanka</text>
+      <text x="0" y="50" class="subtitle">Submit new feedback or track outstanding updates.</text>
+
+      <!-- Grid for New Complaint Quick Link and History -->
+      <g transform="translate(0, 80)">
+        <!-- New Complaint Action Card -->
+        <rect x="0" y="0" width="240" height="200" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+        <circle cx="120" cy="65" r="30" fill="#FFF0E6"/>
+        <text x="112" y="75" font-size="28" fill="#FF7A1A">+</text>
+        <text x="50" y="130" font-size="15" font-weight="700" fill="#111827">Submit New Issue</text>
+        <text x="25" y="152" font-size="12" fill="#9CA3AF" text-anchor="middle" x="120">Share food quality concerns</text>
+        <rect x="45" y="165" width="150" height="28" rx="6" fill="#FF7A1A"/>
+        <text x="78" y="183" font-size="12" font-weight="700" fill="#FFFFFF">File Complaint</text>
+
+        <!-- Complaint History List Card -->
+        <rect x="270" y="0" width="530" height="200" rx="10" fill="#FFFFFF" stroke="#E5E7EB"/>
+        <text x="290" y="30" font-size="15" font-weight="700" fill="#111827">Your Recent Activity</text>
+
+        <!-- List Item 1 -->
+        <g transform="translate(290, 50)">
+          <circle cx="15" cy="20" r="12" fill="#F3F4F6"/>
+          <text x="11" y="24" font-size="11">📦</text>
+          <text x="40" y="18" font-size="13" font-weight="600" fill="#111827">CMP-0003 - BBQ Pulled Pork Wrap</text>
+          <text x="40" y="33" font-size="11" fill="#9CA3AF">Submitted on 2026-07-08</text>
+          
+          <rect x="360" y="8" width="80" height="18" rx="9" fill="#FFFBEB"/>
+          <text x="370" y="21" class="badge-txt" fill="#D97706">In progress</text>
+        </g>
+
+        <!-- Divider -->
+        <line x1="290" y1="108" x2="780" y2="108" stroke="#F3F4F6" stroke-width="1"/>
+
+        <!-- List Item 2 -->
+        <g transform="translate(290, 115)">
+          <circle cx="15" cy="20" r="12" fill="#F3F4F6"/>
+          <text x="11" y="24" font-size="11">🍔</text>
+          <text x="40" y="18" font-size="13" font-weight="600" fill="#111827">CMP-0002 - Classic Beef Burger</text>
+          <text x="40" y="33" font-size="11" fill="#9CA3AF">Submitted on 2026-07-08</text>
+          
+          <rect x="360" y="8" width="80" height="18" rx="9" fill="#F3F4F6"/>
+          <text x="385" y="21" class="badge-txt" fill="#4B5563">Closed</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== SCREEN 3: PRODUCT MANAGER MODAL (BLUR) WIREFRAME ==================== -->
+  <g transform="translate(40, 560)">
+    <!-- Browser Mockup Window -->
+    <rect width="880" height="480" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    <!-- Browser Header Bar -->
+    <rect width="880" height="40" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="2"/>
+    <!-- Close, Min, Max buttons -->
+    <circle cx="20" cy="20" r="6" fill="#EF4444"/>
+    <circle cx="36" cy="20" r="6" fill="#FBBF24"/>
+    <circle cx="52" cy="20" r="6" fill="#10B981"/>
+    <!-- URL bar mockup -->
+    <rect x="100" y="8" width="680" height="24" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="110" y="24" font-size="12" fill="#9CA3AF">localhost/FoodCare/admin/products.php</text>
+
+    <!-- Sidebar Layout -->
+    <rect x="0" y="40" width="180" height="440" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="20" y="75" font-size="18" font-weight="800" fill="#FF7A1A">🍔 FoodCare</text>
+    
+    <g transform="translate(0, 100)">
+      <text x="35" y="22" class="nav-txt">Dashboard</text>
+      <text x="35" y="62" class="nav-txt">Complaints</text>
+      <rect x="10" y="80" width="160" height="36" rx="6" fill="#FFF0E6"/>
+      <text x="35" y="102" class="nav-txt-act">Products</text>
+      <text x="35" y="142" class="nav-txt">Users</text>
+    </g>
+
+    <!-- Main Products list (blurred out by overlay) -->
+    <g transform="translate(200, 40)" opacity="0.15">
+      <text x="0" y="40" class="title">Product Management</text>
+      <rect x="0" y="80" width="660" height="300" fill="#E5E7EB" rx="8"/>
+    </g>
+
+    <!-- BLUR BACKDROP OVERLAY -->
+    <rect x="180" y="40" width="700" height="440" fill="rgba(0,0,0,0.3)" />
+
+    <!-- MODAL POPUP CARD -->
+    <g transform="translate(360, 80)">
+      <rect width="320" height="350" rx="12" fill="#FFFFFF" box-shadow="0 10px 25px rgba(0,0,0,0.2)"/>
+      <text x="20" y="35" font-size="16" font-weight="700" fill="#111827">Add New Product</text>
+      
+      <!-- Close icon -->
+      <text x="285" y="32" font-size="16" font-weight="600" fill="#9CA3AF" cursor="pointer">×</text>
+      <line x1="20" y1="50" x2="300" y2="50" stroke="#E5E7EB"/>
+
+      <!-- Input 1 -->
+      <text x="20" y="80" font-size="12" font-weight="600" fill="#4B5563">Product Name</text>
+      <rect x="20" y="90" width="280" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+      <text x="30" y="110" font-size="12" fill="#9CA3AF">e.g., Double Cheese Burger</text>
+
+      <!-- Input 2 -->
+      <text x="20" y="145" font-size="12" font-weight="600" fill="#4B5563">Description</text>
+      <rect x="20" y="155" width="280" height="55" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+      <text x="30" y="175" font-size="12" fill="#9CA3AF">Write product details here...</text>
+
+      <!-- Input 3 -->
+      <text x="20" y="235" font-size="12" font-weight="600" fill="#4B5563">Price (LKR)</text>
+      <rect x="20" y="245" width="280" height="32" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+      <text x="30" y="265" font-size="12" fill="#9CA3AF">e.g., 990</text>
+
+      <!-- Submit button -->
+      <rect x="20" y="295" width="280" height="36" rx="6" fill="#FF7A1A"/>
+      <text x="115" y="317" font-size="13" font-weight="700" fill="#FFFFFF">Add Product</text>
+    </g>
+  </g>
+
+  <!-- ==================== SCREEN 4: REGISTERED USERS SYSTEM WIREFRAME ==================== -->
+  <g transform="translate(980, 560)">
+    <!-- Browser Mockup Window -->
+    <rect width="880" height="480" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    <!-- Browser Header Bar -->
+    <rect width="880" height="40" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="2"/>
+    <!-- Close, Min, Max buttons -->
+    <circle cx="20" cy="20" r="6" fill="#EF4444"/>
+    <circle cx="36" cy="20" r="6" fill="#FBBF24"/>
+    <circle cx="52" cy="20" r="6" fill="#10B981"/>
+    <!-- URL bar mockup -->
+    <rect x="100" y="8" width="680" height="24" rx="6" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="110" y="24" font-size="12" fill="#9CA3AF">localhost/FoodCare/admin/users.php</text>
+
+    <!-- Sidebar Layout -->
+    <rect x="0" y="40" width="180" height="440" fill="#FFFFFF" stroke="#E5E7EB"/>
+    <text x="20" y="75" font-size="18" font-weight="800" fill="#FF7A1A">🍔 FoodCare</text>
+    
+    <g transform="translate(0, 100)">
+      <text x="35" y="22" class="nav-txt">Dashboard</text>
+      <text x="35" y="62" class="nav-txt">Complaints</text>
+      <text x="35" y="102" class="nav-txt">Products</text>
+      <rect x="10" y="120" width="160" height="36" rx="6" fill="#FFF0E6"/>
+      <text x="35" y="142" class="nav-txt-act">Users</text>
+    </g>
+
+    <!-- Main Content: Users List -->
+    <g transform="translate(200, 40)">
+      <text x="0" y="40" class="title">Registered Users</text>
+      
+      <!-- Search bar -->
+      <rect x="460" y="20" width="200" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB"/>
+      <text x="472" y="38" font-size="11" fill="#9CA3AF">Search Name, Email, or Org...</text>
+
+      <!-- Users table -->
+      <rect x="0" y="65" width="660" height="290" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+      
+      <!-- Headers -->
+      <rect x="0" y="65" width="660" height="30" fill="#F9FAFB"/>
+      <text x="15" y="84" class="header-text">ID</text>
+      <text x="60" y="84" class="header-text">User</text>
+      <text x="200" y="84" class="header-text">Email</text>
+      <text x="360" y="84" class="header-text">Phone</text>
+      <text x="470" y="84" class="header-text">Organization</text>
+      <text x="590" y="84" class="header-text">Role</text>
+
+      <!-- User Row 1 -->
+      <text x="15" y="120" class="cell-text">#1</text>
+      <!-- Avatar -->
+      <circle cx="70" cy="116" r="10" fill="#FF7A1A"/>
+      <text x="67" y="120" font-size="9" fill="#FFFFFF" font-weight="700">A</text>
+      <text x="90" y="120" class="cell-text" font-weight="600">Ayodya Sasanka</text>
+      <text x="200" y="120" class="cell-text">ayosasa456@gmail.com</text>
+      <text x="360" y="120" class="cell-text">+94771234567</text>
+      <text x="470" y="120" class="cell-text">Ayodya Devs</text>
+      <rect x="590" y="108" width="55" height="16" rx="8" fill="#EFF6FF"/>
+      <text x="600" y="120" font-size="9" font-weight="700" fill="#1D4ED8">CUSTOMER</text>
+
+      <!-- Divider -->
+      <line x1="0" y1="140" x2="660" y2="140" stroke="#F3F4F6" stroke-width="1"/>
+
+      <!-- User Row 2 -->
+      <text x="15" y="170" class="cell-text">#2</text>
+      <circle cx="70" cy="166" r="10" fill="#FF7A1A"/>
+      <text x="67" y="170" font-size="9" fill="#FFFFFF" font-weight="700">A</text>
+      <text x="90" y="170" class="cell-text" font-weight="600">Admin User</text>
+      <text x="200" y="170" class="cell-text">admin@foodcare.com</text>
+      <text x="360" y="170" class="cell-text">N/A</text>
+      <text x="470" y="170" class="cell-text">BiteCraft Kitchen</text>
+      <rect x="590" y="158" width="55" height="16" rx="8" fill="#FFF7ED"/>
+      <text x="607" y="170" font-size="9" font-weight="700" fill="#C2410C">ADMIN</text>
+    </g>
+  </g>
+</svg>
