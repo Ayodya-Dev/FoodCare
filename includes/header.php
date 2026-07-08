@@ -50,7 +50,7 @@ $flash = get_flash();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Global Design System CSS -->
-    <link rel="stylesheet" href="<?= BASE_PATH ?>/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_PATH ?>/css/style.css?v=2">
 
     <!-- Page-specific CSS slot (define $extra_css before including header.php) -->
     <?php if (!empty($extra_css)): ?>
@@ -72,10 +72,10 @@ $flash = get_flash();
         <!-- Main Navigation Links -->
         <ul class="navbar__links" id="nav-links" role="list">
             <?php if (!is_logged_in()): ?>
-                <!-- Public links (not logged in) -->
-                <li><a href="<?= BASE_PATH ?>/index.php"   class="navbar__link" id="nav-home">Home</a></li>
-                <li><a href="<?= BASE_PATH ?>/login.php"   class="navbar__link" id="nav-login">Login</a></li>
-                <li><a href="<?= BASE_PATH ?>/register.php" class="navbar__link" id="nav-register">Register</a></li>
+                <!-- Public links -->
+                <li><a href="#how-it-works" class="navbar__link" id="nav-how">How it works</a></li>
+                <li><a href="#about"        class="navbar__link" id="nav-about">About</a></li>
+                <li><a href="#contact"      class="navbar__link" id="nav-contact">Contact</a></li>
 
             <?php elseif (is_admin()): ?>
                 <!-- Admin links -->
@@ -101,8 +101,8 @@ $flash = get_flash();
                 </div>
                 <a href="<?= BASE_PATH ?>/logout.php" class="btn btn--secondary btn--sm" id="nav-logout">Logout</a>
             <?php else: ?>
-                <a href="<?= BASE_PATH ?>/login.php"    class="btn btn--ghost btn--sm"   id="nav-login-btn">Login</a>
-                <a href="<?= BASE_PATH ?>/register.php" class="btn btn--primary btn--sm" id="nav-register-btn">Get Started</a>
+                <a href="<?= BASE_PATH ?>/login.php?role=admin" class="btn btn--admin btn--sm"   id="nav-admin-btn">Admin Login</a>
+                <a href="<?= BASE_PATH ?>/login.php"            class="btn btn--primary btn--sm" id="nav-user-btn">User Login</a>
             <?php endif; ?>
 
             <!-- Mobile hamburger button -->

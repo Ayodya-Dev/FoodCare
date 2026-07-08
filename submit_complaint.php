@@ -94,12 +94,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // ── Retrieve products from DB for the grid selection ────────────────────────
-$products_stmt = $pdo->query("SELECT id, name, description, price FROM products ORDER BY name ASC");
+$products_stmt = $pdo->query("SELECT id, name, description, price, image FROM products ORDER BY name ASC");
 $products = $products_stmt->fetchAll();
 
 $page_title = 'Submit a Complaint';
 require_once __DIR__ . '/includes/header.php';
 ?>
+
+<style>
+/* Force correct page layout — overrides any cached CSS */
+html { height: auto !important; }
+body { height: auto !important; display: flex; flex-direction: column; min-height: 100vh; }
+body > main, body > .page-wrapper { flex: 1 1 auto; height: auto !important; overflow: visible !important; }
+.site-footer { margin-top: 0 !important; }
+</style>
 
 <main class="page-wrapper">
     <div class="container animate-fade-in" style="max-width:800px;">
@@ -129,10 +137,16 @@ require_once __DIR__ . '/includes/header.php';
                     <?php else: ?>
                         <?php foreach ($products as $product): ?>
                             <!-- product-card JS triggers selection styling -->
-                            <div class="product-card" data-product-id="<?= $product['id'] ?>" type="button">
-                                <div style="font-size:2rem; margin-bottom:0.5rem;">🍔</div>
-                                <div class="product-card__name"><?= htmlspecialchars($product['name']) ?></div>
-                                <p style="color:var(--clr-text-muted); font-size:0.75rem; margin-top:0.25rem;">
+                            <div class="product-card" data-product-id="<?= $product['id'] ?>" type="button" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.25rem; border:1px solid var(--fc-border); border-radius:12px; cursor:pointer; background:#fff; transition:all 0.15s ease;">
+                                <div style="width:100%; height:90px; border-radius:8px; background:#F9FAFB; display:flex; align-items:center; justify-content:center; overflow:hidden; border:1px solid #E6E6E6; margin-bottom:0.75rem;">
+                                    <?php if (!empty($product['image'])): ?>
+                                        <img src="<?= BASE_PATH ?>/uploads/<?= htmlspecialchars($product['image']) ?>" style="width:100%; height:100%; object-fit:cover;">
+                                    <?php else: ?>
+                                        <span style="font-size:2.5rem;">🍔</span>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="product-card__name" style="font-weight:700; color:var(--fc-black); margin-bottom:0.25rem; font-size:0.95rem;"><?= htmlspecialchars($product['name']) ?></div>
+                                <p style="color:var(--clr-text-muted); font-size:0.75rem; margin-top:0.25rem; line-height:1.4;">
                                     <?= htmlspecialchars($product['description']) ?>
                                 </p>
                             </div>
